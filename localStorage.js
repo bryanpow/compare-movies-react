@@ -19,12 +19,12 @@ export const addCard = (card) => {
 export const getDefault = () => getLocalStorageKey("default");
 export const setDefault = (def) => setLocalStorageKey("default", def);
 
-export const addDefault = (card) => {
-  const cards = getDefault();
-  if (cards) {
-    setDefault([...cards, card]);
-  } else {
-    setDefault([card]);
+export const addDefault = (newCard) => {
+  const cards = getDefault() || [];
+  const exists = cards.some(card => card.title === newCard.title); // Adjust this condition based on how you identify duplicates
+
+  if (!exists) {
+    setDefault([...cards, newCard]);
   }
 };
 

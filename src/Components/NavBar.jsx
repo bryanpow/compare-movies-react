@@ -1,9 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function NavBar() {
   return (
     <div>
         <header>
+                  <Link to='/'>
                   <div
                       id="logo"
                       style={{ display: "flex", alignItems: "center", gap: "10px" }}
@@ -18,6 +20,7 @@ function NavBar() {
                           MovieMetrics
                       </h2>
                   </div>
+                  </Link>
                   <div id="nav">
                       <div id="settings">
                           <p id="se" className="change">
@@ -45,9 +48,11 @@ function NavBar() {
                           </p>
                           <div id="aa">
                               <div className="let">
+                                <Link to='/Movies'>
                                   <p id="ho" className="gr change">
                                       Movies
                                   </p>
+                                  </Link>
                               </div>
                               <div className="let">
                                   <p id="char" className="gr change">

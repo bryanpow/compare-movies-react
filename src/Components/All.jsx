@@ -1,4 +1,5 @@
 import React from "react";
+import Form from "./Form";
 
 function All() {
   return (
@@ -17,47 +18,7 @@ function All() {
               </div>
               <div id="movies">
                   <div id="add-movie">
-                      <form id="movieForm">
-                          <h3 id='formTitle' style={{ fontWeight: 400 }}>Add Movie +</h3>
-                          <div id="formItems">
-                              <div className="in">
-                                  <label htmlFor="title">Movie-Title: </label>
-                                  <input type="text" name="title" id="title" autoComplete="off" required />
-                                  <button id="titleSub" type="submit">Search</button>
-                              </div>
-                              <div className="in">
-                                  <label htmlFor="critic">Critic Score: </label>
-                                  <input type="number" name="critic" id="critic" autoComplete="off" required />
-                              </div>
-                              <div className="in">
-                                  <label htmlFor="audience">Viewer Score: </label>
-                                  <input type="number" name="audience" id="audience" autoComplete="off" required />
-                              </div>
-                              <div className="in">
-                                  <label htmlFor="box">Box Office: </label>
-                                  <input type="text" name="box" id="box" autoComplete="off" required />
-                              </div>
-                              <div className="in">
-                                  <label htmlFor="genre">Genre:</label>
-                                  <select id="genre" name="genre" autoComplete="off" required>
-                                      <option value="" disabled selected>Select genre</option>
-                                      <option value="action">Action</option>
-                                      <option value="adventure">Adventure</option>
-                                      <option value="comedy">Comedy</option>
-                                      <option value="drama">Drama</option>
-                                      <option value="horror">Horror</option>
-                                      <option value="documentary">Documentary</option>
-                                      <option value="musical">Musical</option>
-                                      <option value="romance">Romance</option>
-                                      <option value="sci-fi">Sci-Fi</option>
-                                      <option value="thriller">Thriller</option>
-                                  </select>
-                              </div>
-                              <div id="butts">
-                                  <button id="formSub" className="in">Add</button>
-                              </div>
-                          </div>
-                      </form>
+                    <Form />
                   </div>
               </div>
               <div id="m">
