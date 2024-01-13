@@ -1,8 +1,15 @@
 import React from 'react'
+import { useEffect, useState } from 'react'
 import NavBar from './NavBar'
 import Footer from './Footer'
-
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 function Home() {
+    useEffect(() => {
+        AOS.init({
+            once: true
+        })
+    }, [])
   return (
     <div>
         <NavBar />
