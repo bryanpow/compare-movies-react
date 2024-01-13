@@ -88,3 +88,44 @@ export const sanitizeInput = (input) =>  {
       // console.log(movieCard)
     });
   };
+
+
+
+  //get movie data from api
+  export const getMovie = async () => {
+    const apiKey = "191759f3";
+    let url = `http://www.omdbapi.com/?apikey=${apiKey}&&t=${titleData}`;
+    const response = await fetch(url);
+    const jsonResponse = await response.json();
+    if (jsonResponse["Response"] === "True") {
+      const img = jsonResponse["Poster"];
+      localStorage.setItem(`Image`, img);
+      if (jsonResponse["Title"]) {
+        setTitle(jsonResponse["Title"]);
+      }
+      if (jsonResponse["Ratings"].length > 1) {
+        setCriticScore(jsonResponse["Ratings"][1][
+          "Value"
+        ].replace(/%/g, ""));
+      setViewerScore(parseFloat(
+          jsonResponse["Ratings"][0]["Value"].split("/")[0] * 10
+        ));
+      } else {
+        setCriticScore(null);
+        setViewerScore(null)
+      }
+  
+      if (jsonResponse["BoxOffice"] !== "N/A") {
+        setBoxOffice(jsonResponse["BoxOffice"]);
+      } else {
+        setBoxOffice(null);
+      }
+    } else {
+      localStorage.setItem(
+        `Image`,
+        "https://viterbi-web.usc.edu/~zexunyao/itp301/Assignment_07/img.jpeg"
+      );
+      //to do:  if movie not found, set form display to none, display message on top of form div for a few seconds
+        const message = "Movie not found. Check spelling or insert your own data";
+    }
+}
