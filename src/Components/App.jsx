@@ -24,6 +24,7 @@ function App() {
       const fetchMovies = async () => {
         const moviesData = await renderDef(defaultMov);
         defaultMovies.value = moviesData
+        console.log(defaultMovies.value)
     }
     fetchMovies()
   }, [])

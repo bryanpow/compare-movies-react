@@ -2,18 +2,7 @@ import React, { useState } from "react";
 import { signal, effect} from "@preact/signals-react";
 import {getMovie} from "../../helpers";
 import { addCard } from "../../localStorage";
-export const formData = signal(
-    [
-    {
-        title: '',
-        critic: '',
-        veiwer: '',
-        box: '',
-        genre: '',
-        img: ''
-    }
-]
-)
+export const formData = signal()
 function Form() {
     const [title, setTitle] = useState('');
     const [criticScore, setCriticScore] = useState('');
@@ -40,9 +29,10 @@ function Form() {
     }
     const handleSubmit = (e) => {
         e.preventDefault()
-        if (formData.value.length > 0) {
-            formData.value = [...formData.value, 
-                {
+
+      
+        formData.value =
+                    {
                     title: title,
                     critic: criticScore,
                     veiwer: viewerScore,
@@ -50,23 +40,7 @@ function Form() {
                     genre: genre,
                     img: img
                 }
-            ]
-        } else {
-            formData.value =
-                {
-                    title: title,
-                    critic: criticScore,
-                    veiwer: viewerScore,
-                    box: boxOffice,
-                    genre: genre,
-                    img: img
-                }
-        }
-        setTitle(null);
-        setCriticScore(null);
-        setViewerScore(null);
-        setBoxOffice(null)
-        setImg(null)
+        
         addCard({
             title: title,
             critic: criticScore,
@@ -75,9 +49,14 @@ function Form() {
             genre: genre,
             img: img
         })
+        setTitle('');
+        setCriticScore('');
+        setViewerScore('');
+        setBoxOffice('')
+        setImg('')
+        
   
     }
-    
   return (
     <div>
       <form id="movieForm">

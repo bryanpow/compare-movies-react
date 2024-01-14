@@ -1,24 +1,28 @@
-import React from 'react'
-
-function Footer() {
+import React, { useEffect } from 'react'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+function Footer(aos) {
+    useEffect(() => {
+        AOS.init()
+    }, [])
   return (
     <div>
-        <footer id="br">
-              <div id="border">
-                  <div id="info">
-                      <div className="foot" id="comp">
+        <footer style={{boxShadow: 'none'}} id="br">
+              <div data-aos='fade-in' style={{ boxShadow: '0px -1px 0px 0px rgba(169, 169, 169, 0.05)', paddingTop: '20px'}} data-aos-duration='1000' id="border">
+                  <div id="info" style={{border: 'none'}}>
+                      <div data-aos="fade-in" data-aos-duration="1000" className="foot" id="comp">
                           <h3>MOVIEMETRICS</h3>
                           Explore, compare, and discover your favorite movies through
                           insightful charts and data.
                       </div>
-                      <div className="foot" id="features">
+                      <div data-aos="fade-in" data-aos-duration="1000" className="foot" id="features">
                           <h3>FEATURES</h3>
                           <p>Display</p>
                           <p>Movie Data</p>
                           <p>Charts</p>
                           <p>Comparisons</p>
                       </div>
-                      <div className="foot" id="link">
+                      <div data-aos="fade-in" data-aos-duration="1000" className="foot" id="link">
                           <h3>SOURCES</h3>
                           <a
                               className="bub"
@@ -48,7 +52,7 @@ function Footer() {
                               All Icons
                           </a>
                       </div>
-                      <div className="foot" id="contact">
+                      <div data-aos="fade-in" data-aos-duration="1000" className="foot" id="contact">
                           <h3>CONTACT</h3>
                           <div className="con">
                               <img
@@ -64,7 +68,7 @@ function Footer() {
                                   height="20" />
                               <p>New York, U.S.</p>
                           </div>
-                          <div className="con">
+                          <div  className="con">
                               <img
                                   className="cont"
                                   style={{
@@ -78,7 +82,7 @@ function Footer() {
                                   height="20" />
                               <p>RamosBusiness</p>
                           </div>
-                          <div className="con">
+                          <div  className="con">
                               <img
                                   className="cont"
                                   style={{
@@ -95,11 +99,11 @@ function Footer() {
                       </div>
                   </div>
 
-                  <div id="bot">
-                      <div id="copy">
+                  <div  id="bot"  style={{border: 'none'}}>
+                      <div   id="copy">
                           <p>©2023 Bryan Ramos</p>
                       </div>
-                      <div id="icons">
+                      <div  id="icons">
                           <a
                               href="https://www.linkedin.com/in/bryan-ramos-174826279/"
                               target="_blank"
@@ -111,7 +115,7 @@ function Footer() {
                                   alt="LinkedIn"
                                   width="50" />
                           </a>
-                          <a
+                          <a 
                               href="https://github.com/bryanpow"
                               target="_blank"
                               rel="noopener noreferrer"

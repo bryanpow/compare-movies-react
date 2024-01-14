@@ -8,7 +8,7 @@ function NavBar() {
                   <Link to='/'>
                   <div
                       id="logo"
-                      style={{ display: "flex", alignItems: "center", gap: "10px" }}
+                      style={{ display: "flex", alignItems: "center", gap: "10px", }}
                   >
                       <img
                           id="log2"

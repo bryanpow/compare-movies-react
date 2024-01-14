@@ -45,20 +45,20 @@ function Home() {
               </div>
               <div id="pos">
                   <div className="homeInfo">
-                      <div className="right" data-aos="fade-right" data-aos-duration="900">
-                          <h1>Movie Search and Display 🔍</h1>
+                      <div className="right" data-aos="fade-in" data-aos-duration="2000">
+                          <h1 style={{fontWeight: '400'}}>Movie Search and Display 🔍</h1>
                           <p>Explore the vast world of cinema with our intuitive movie search and display feature. Easily discover and retrieve automated data for popular titles. Whether you're looking for your favorite classics or the latest blockbusters, our search engine makes it a breeze to find and display detailed information for any movie.</p>
                       </div>
                   </div>
                   <div className="homeInfo">
-                      <div className="right" data-aos="fade-right" data-aos-duration="900">
-                          <h1>Interactive Movie Comparison Charts 📊</h1>
+                      <div className="right" data-aos="fade-in" data-aos-duration="2000">
+                          <h1 style={{fontWeight: '400'}}>Interactive Movie Comparison Charts 📊</h1>
                           <p>Dive into the data-driven experience of our interactive movie comparison charts. Uncover insights into box office performance, ratings, and the intriguing contrast between critic and audience opinions. Visualize the data in beautifully crafted charts that allow you to compare and contrast the movies you love.</p>
                       </div>
                   </div>
                   <div className="homeInfo">
-                      <div className="right" id="one" data-aos="fade-right" data-aos-duration="900">
-                          <h1>Personalized Movie Insights 🎬</h1>
+                      <div className="right" id="one" data-aos="fade-in" data-aos-duration="2000">
+                          <h1 style={{fontWeight: '400'}}>Personalized Movie Insights 🎬</h1>
                           <p>Our platform empowers you to curate your own collection of movies, explore their data, and make informed decisions about your next cinematic journey. Your movie-watching experience just got a whole lot smarter.</p>
                       </div>
                   </div>

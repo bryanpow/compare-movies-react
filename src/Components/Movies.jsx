@@ -8,35 +8,59 @@ import defaultMov from "../../public/movie-data.json";
 import { defaultMovies } from './App'
 import { addMovie } from '../../helpers'
 import { sanitizeInput } from '../../helpers'
+
 function Movies() {
 const [movies, setMovies] = useState([])
 
 useEffect(() => {
     const added = getCard();
     if (added) {
-        const movieElements = added.map(movie => addMovie(movie));
-        setMovies(currentMovies => movieElements.concat(currentMovies));
+        // Reverse the order of movies so that new ones come first
+        const reversedAdded = [...added].reverse();
+        const movieElements = reversedAdded.map(movie => addMovie(movie));
+        setMovies(currentMovies => {
+            const existingMovieTitles = new Set(currentMovies.map(movie => movie && movie.title));
+            const newMovies = movieElements.filter(movie => movie && !existingMovieTitles.has(movie.title));
+            // Prepend new movies to the existing movies in state
+            return [...newMovies, ...currentMovies];
+        });
     }
-    
 }, []);
 
 
-
-    useEffect(() => {
+useEffect(() => {
+   
     const unsubscribe = defaultMovies.subscribe(() => {
-        setMovies(defaultMovies.value)
+        if (defaultMovies.value) {
+            setMovies(currentMovies => {
+                const currentTitles = new Set(currentMovies.map(movie => movie.title));
+                
+          // Filter out the new movies that are already in the currentMovies
+          const uniqueNewMovies = defaultMovies.value.filter(movie => !currentTitles.has(movie.title));
+    
+          // Return the combined array of current movies and unique new movies
+          return [...currentMovies, ...uniqueNewMovies];
+            })
+        }
+       
     })
     return () => unsubscribe()
-    },[defaultMovies])
 
-    useEffect(() => {
+
+}, [defaultMovies])
+
+
+   
+useEffect(() => {
+    if (formData.value) {
         const unsubscribe = formData.subscribe(() => {
             const data = addMovie(formData.value[formData.value.length - 1])
             setMovies(currentMovies => Array.isArray(currentMovies) ? [data, ...currentMovies] : [data])
         })
 
         return () => unsubscribe()
-    }, [formData])
+    }
+}, [formData])
    
   return (
     <div>
@@ -59,7 +83,7 @@ useEffect(() => {
                   </div>
               </div>
           </div>
-          <Footer />
+          <Footer aos='fade' />
     </div>
   )
 }

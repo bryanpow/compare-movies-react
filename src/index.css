@@ -1,7 +1,10 @@
 @import url('https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
+
 :root {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Mulish', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
@@ -45,9 +48,9 @@ input, select {
 }
 button {
 
-  background-color: #2d2d2d;
+  background-color: black;
   color: white;
-  border: 2px solid black;
+  border: 2px solid #2d2d2d;
   width: 80px;
   height: 30px;
   border-radius: 2px;
@@ -55,7 +58,7 @@ button {
   transition: all 0.3s ;
 }
 button:hover {
-  background-color:black;
+  background-color:#2d2d2d;
 }
 #added {
   font-weight: 450;
@@ -308,7 +311,6 @@ form:hover {
 }
 header {
   
-  font-family:Arial, Helvetica, sans-serif;
   margin-left: 5%;
   margin-right: 5%;
   display: flex;
@@ -325,9 +327,8 @@ header {
  transform: translateX(10px);
 }
 .start {
-  font-family: 'Montserrat', sans-serif;
   color: white;
-  background: linear-gradient(to top, #1a1a1a, #1a1a1a, #333333, #1a1a1a);
+  background: black;
   width:150px;
   height:auto;
   font-size: 15px;
@@ -337,29 +338,24 @@ header {
  align-self: center;
  transition: all 0.2s;
 }
-#start:hover {
-  scale:1.02
 
-}
 main {
 
 }
 input {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Mulish', sans-serif;
 }
 button, select {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Mulish', sans-serif;
 }
 button {
-  background: linear-gradient(to top, #1a1a1a, #1a1a1a, #333333, #1a1a1a);
+
   border: 1% solid black
 }
 select, input {
   font-size: 15px;
 }
-header {
-  font-family: 'Montserrat', sans-serif;
-}
+
 form button {
   border: 1.5px solid black;
 }
@@ -533,15 +529,15 @@ header {
 
 }
 footer {
-  box-shadow: 0px -10px 20px 5px rgba(169, 169, 169, 0.5);
+
   font-weight: 500;
-  padding-top: 20px;
+  
   display: flex;
   flex-direction: column;
-  border-top: 3px solid #2F2F2F;
+
 
   padding-bottom: 30px;
-  background-color:#1a1a1a
+  background:  #080808;
 
   ;
 }
@@ -588,7 +584,7 @@ a {
   width: 100%;
   margin: 0 auto;
   border-top: 3px solid black;
-   background-color:#1a1a1a;
+  background:  #080808;
   color: white;
   margin-bottom:0;
  transform: translateY(20px);
@@ -602,10 +598,9 @@ a {
   align-items: center;
   padding-left: 5%;
   padding-right:5%;
-  padding-bottom: 20px;
-  padding-top: 20px;
-  border-bottom: 5px solid black;
-  border-top: 2px solid  #2F2F2F;
+  padding-bottom: 60px;
+  padding-top: 40px;
+  box-shadow: 0px -5px 0px 0px rgba(169, 169, 169, 0.05);
   margin-top: 10px;
   margin-bottom: 10px;
   width: 85%;
@@ -626,7 +621,7 @@ a {
  
 }
 .bub {
-  text-decoration: underline;
+ 
   padding: 10px;
   transition: 0.1s;
 }
@@ -814,9 +809,7 @@ gap: 10px
   };
 
 }
-#br {
-  border-top: 3px solid #2F2F2F;
-}
+
 #textMov {
   width: 90%;
   text-align: center;

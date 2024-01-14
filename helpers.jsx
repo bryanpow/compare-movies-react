@@ -66,7 +66,7 @@ export const sanitizeInput = (input) =>  {
         <div class='cardInfo'>
       <p class='titleVal' style={{fontWeight:'bold', paddingTop: '5px'}}>{card.title}</p>
       <p class='criticVal'>Critic-score: {card.critic}%</p>
-      <p class='veiwerVal'>Viewer-score: {card.viewer}%</p>
+      <p class='veiwerVal'>Viewer-score: {card.veiwer}%</p>
       <p class='boxVal'>Box-Office: {
         card.box
           .toLocaleString("en-US", {
@@ -141,7 +141,7 @@ export const sanitizeInput = (input) =>  {
         <div class='cardInfo'>
       <p class='titleVal' style={{fontWeight:'bold', paddingTop: '5px'}}>{card.title}</p>
       <p class='criticVal'>Critic-score: {card.critic}%</p>
-      <p class='veiwerVal'>Viewer-score: {card.viewer}%</p>
+      <p class='veiwerVal'>Viewer-score: {card.veiwer}%</p>
       <p class='boxVal'>Box-Office: {
         card.box
           .toLocaleString("en-US", {
