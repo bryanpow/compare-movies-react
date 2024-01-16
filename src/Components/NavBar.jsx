@@ -136,7 +136,7 @@ function NavBar({settings, color, sources}) {
                       >
                           <img
                               id="log2"
-                              src="/public/White-log.png"
+                              src="/White-log.png"
                               alt="Logo"
                               width="40"
                               height="40" />
