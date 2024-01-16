@@ -1,28 +1,33 @@
 import React, { useEffect } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-function Footer(aos) {
-    useEffect(() => {
-        AOS.init()
-    }, [])
+function Footer({aos}) {
+    if (aos) {
+        useEffect(() => {
+            AOS.init({
+                once: true
+            })
+        }, [])
+    }
+    
   return (
     <div>
-        <footer style={{boxShadow: 'none'}} id="br">
-              <div data-aos='fade-in' style={{ boxShadow: '0px -1px 0px 0px rgba(169, 169, 169, 0.05)', paddingTop: '20px'}} data-aos-duration='1000' id="border">
+        <footer  id="br">
+              <div  style={{ boxShadow: '0px -1px 0px 0px rgba(169, 169, 169, 0.1)', paddingTop: '20px'}} data-aos-duration='1000' id="border">
                   <div id="info" style={{border: 'none'}}>
-                      <div data-aos="fade-in" data-aos-duration="1000" className="foot" id="comp">
+                      <div data-aos={aos && 'fade-in'} data-aos-duration="1000" className="foot" id="comp">
                           <h3>MOVIEMETRICS</h3>
                           Explore, compare, and discover your favorite movies through
                           insightful charts and data.
                       </div>
-                      <div data-aos="fade-in" data-aos-duration="1000" className="foot" id="features">
+                      <div data-aos={aos && 'fade-in'} data-aos-duration="1000" className="foot" id="features">
                           <h3>FEATURES</h3>
                           <p>Display</p>
                           <p>Movie Data</p>
                           <p>Charts</p>
                           <p>Comparisons</p>
                       </div>
-                      <div data-aos="fade-in" data-aos-duration="1000" className="foot" id="link">
+                      <div data-aos={aos && 'fade-in'} data-aos-duration="1000" className="foot" id="link">
                           <h3>SOURCES</h3>
                           <a
                               className="bub"
@@ -52,7 +57,7 @@ function Footer(aos) {
                               All Icons
                           </a>
                       </div>
-                      <div data-aos="fade-in" data-aos-duration="1000" className="foot" id="contact">
+                      <div data-aos={aos && 'fade-in'} data-aos-duration="1000" className="foot" id="contact">
                           <h3>CONTACT</h3>
                           <div className="con">
                               <img

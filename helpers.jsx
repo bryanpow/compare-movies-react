@@ -9,6 +9,7 @@ import {
     addDefault,
     removeDef,
   } from "./localStorage";
+import { updateLocalStorageMovies } from "./src/Components/App";
 
 //sanitizes input from form
 export const sanitizeInput = (input) =>  {
@@ -25,25 +26,26 @@ export const sanitizeInput = (input) =>  {
 
   //saves default movies to local storage
   export const saveDefault = async (data) => {
-    const jMovies = data;
-    localStorage.removeItem("default");
-    for (const movie of jMovies) {
-      const apiKey = "191759f3";
-      let url = `http://www.omdbapi.com/?apikey=${apiKey}&&t=${movie.title}`;
-      const response = await fetch(url);
-      const jsonResponse = await response.json();
-      console.log(jsonResponse);
-      const cardStore = {
-        img: jsonResponse["Poster"],
-        title: movie.title,
-        critic: movie.criticScore,
-        veiwer: movie.audienceScore,
-        box: movie.domestic,
-        genre: movie.genre,
-      };
-  
-      addDefault(cardStore);
-    }
+      const jMovies = data;
+      localStorage.removeItem("default");
+      for (const movie of jMovies) {
+        const apiKey = "191759f3";
+        let url = `http://www.omdbapi.com/?apikey=${apiKey}&&t=${movie.title}`;
+        const response = await fetch(url);
+        const jsonResponse = await response.json();
+       
+        const cardStore = {
+          img: jsonResponse["Poster"],
+          title: movie.title,
+          critic: movie.criticScore,
+          veiwer: movie.audienceScore,
+          box: movie.domestic,
+          genre: movie.genre,
+        };
+    
+        addDefault(cardStore);
+      }
+   
   };
 
   //renders default movies
@@ -63,11 +65,11 @@ export const sanitizeInput = (input) =>  {
         console.log("done")
        }}
       >
-        <div class='cardInfo'>
-      <p class='titleVal' style={{fontWeight:'bold', paddingTop: '5px'}}>{card.title}</p>
-      <p class='criticVal'>Critic-score: {card.critic}%</p>
-      <p class='veiwerVal'>Viewer-score: {card.veiwer}%</p>
-      <p class='boxVal'>Box-Office: {
+        <div className='cardInfo'>
+      <p className='titleVal' style={{fontWeight:'bold', paddingTop: '5px'}}>{card.title}</p>
+      <p className='criticVal'>Critic-score: {card.critic}%</p>
+      <p className='veiwerVal'>Viewer-score: {card.veiwer}%</p>
+      <p className='boxVal'>Box-Office: {
         card.box
           .toLocaleString("en-US", {
             style: "currency",
@@ -75,7 +77,7 @@ export const sanitizeInput = (input) =>  {
           })
           .split(".")[0]
       }</p>
-      <p class='genreVal'>Genre:    ${card.genre}</p>
+      <p className='genreVal'>Genre:    ${card.genre}</p>
       </div>
   
       <img src = {card.img} width='100%' height='100%' class='cardPicture'></img>
@@ -131,18 +133,18 @@ export const sanitizeInput = (input) =>  {
 
   //adds new movie to list
   export const addMovie =  (card) => {
+    const handleDelete  = () => {
+      removeCard(card.title);
+      removeDef(card.title)
+      updateLocalStorageMovies()
+    }
     return (
-      <div key={card.title} className='card loaded'
-       onDoubleClick={() => {
-        removeDef(card.title);
-        console.log("done")
-       }}
-      >
-        <div class='cardInfo'>
-      <p class='titleVal' style={{fontWeight:'bold', paddingTop: '5px'}}>{card.title}</p>
-      <p class='criticVal'>Critic-score: {card.critic}%</p>
-      <p class='veiwerVal'>Viewer-score: {card.veiwer}%</p>
-      <p class='boxVal'>Box-Office: {
+      <div onDoubleClick={() => handleDelete()} key={card.title}  className='card loaded'>
+      <div  className='cardInfo'>
+      <p className='titleVal' style={{fontWeight:'bold', paddingTop: '5px'}}>{card.title}</p>
+      <p className='criticVal'>Critic-score: {card.critic}%</p>
+      <p className='veiwerVal'>Viewer-score: {card.veiwer}%</p>
+      <p className='boxVal'>Box-Office: {
         card.box
           .toLocaleString("en-US", {
             style: "currency",
@@ -150,10 +152,10 @@ export const sanitizeInput = (input) =>  {
           })
           .split(".")[0]
       }</p>
-      <p class='genreVal'>Genre:    {card.genre}</p>
+      <p className='genreVal'>Genre:    {card.genre}</p>
       </div>
   
-      <img src = {card.img} width='100%' height='100%' class='cardPicture'></img>
+      <img src = {card.img} width='100%' height='100%' className='cardPicture'></img>
       </div>
       );
    

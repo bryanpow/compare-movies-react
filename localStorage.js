@@ -30,10 +30,17 @@ export const addDefault = (newCard) => {
 
 export const removeCard = (input) => {
   const cards = getCard();
-  const newCards = cards.filter((card) => card.title !== input);
-  setCard([...newCards]);
+  if (cards) {
+    const newCards = cards.filter((card) => card.title !== input);
+    setCard([...newCards]);
+  }
+ 
 };
 export const removeDef = (cardToRemove) => {
-  const cards = getDefault().filter((card) => card.title !== cardToRemove);
-  setDefault([...cards]);
+  const cards = getDefault()
+  if (cards) {
+    const newCards = cards.filter((card) => card.title !== cardToRemove);
+  setDefault([...newCards]);
+  }
+  
 };

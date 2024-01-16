@@ -12,7 +12,7 @@ function Home() {
     }, [])
   return (
     <div>
-        <NavBar />
+        <NavBar color='light' settings={'nonActive'} />
         <div id="landp">
               <div id="land">
                   <div id="desc">
@@ -64,7 +64,7 @@ function Home() {
                   </div>
               </div>
           </div>
-          <Footer />
+          <Footer aos={true} />
     </div>
   )
 }

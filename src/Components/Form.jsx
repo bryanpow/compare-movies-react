@@ -3,15 +3,21 @@ import { signal, effect} from "@preact/signals-react";
 import {getMovie} from "../../helpers";
 import { addCard } from "../../localStorage";
 export const formData = signal()
-function Form() {
-    const [title, setTitle] = useState('');
-    const [criticScore, setCriticScore] = useState('');
-    const [viewerScore, setViewerScore] = useState('');
-    const [boxOffice, setBoxOffice] = useState('');
-    const [genre, setGenre] = useState('');
+import { updateLocalStorageMovies } from "./App";
+
+
+function Form({expand, handleExpand}) {
+    const [title, setTitle] = useState();
+    const [criticScore, setCriticScore] = useState();
+    const [viewerScore, setViewerScore] = useState();
+    const [boxOffice, setBoxOffice] = useState();
+    const [genre, setGenre] = useState();
     const [img, setImg] = useState('https://viterbi-web.usc.edu/~zexunyao/itp301/Assignment_07/img.jpeg')
     const [ph, setPh] = useState(true)
-    
+   
+
+  
+
     const handleSearch = async(titleData) => {
         setTitle('');
         setCriticScore('');
@@ -29,18 +35,7 @@ function Form() {
     }
     const handleSubmit = (e) => {
         e.preventDefault()
-
-      
-        formData.value =
-                    {
-                    title: title,
-                    critic: criticScore,
-                    veiwer: viewerScore,
-                    box: boxOffice,
-                    genre: genre,
-                    img: img
-                }
-        
+        handleExpand()
         addCard({
             title: title,
             critic: criticScore,
@@ -54,16 +49,17 @@ function Form() {
         setViewerScore('');
         setBoxOffice('')
         setImg('')
-        
+        setGenre('')
+        updateLocalStorageMovies();
   
     }
   return (
     <div>
-      <form id="movieForm">
-        <h3 id="formTitle" style={{ fontWeight: 400 }}>
+      <form id="movieForm" onSubmit={handleSubmit}>
+        <h3 id="formTitle" onClick={handleExpand} style={{ fontWeight: 400, cursor: 'pointer' }}>
           Add Movie +
         </h3>
-        <div id="formItems">
+        <div id="formItems"  class={expand && 'expanded'}>
           <div className="in">
             <label htmlFor="title">Movie-Title: </label>
             <input
@@ -137,11 +133,11 @@ function Form() {
               <option value="thriller">Thriller</option>
             </select>
           </div>
-          <div id="butts">
-            <button id="formSub" onClick={handleSubmit} className="in">
+          
+            <button id="formSub" type='submit' className="in">
               Add
             </button>
-          </div>
+       
         </div>
       </form>
     </div>
