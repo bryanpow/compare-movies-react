@@ -34,7 +34,7 @@ function Home() {
                   <div id="force">
                       <img
                           id="graphic"
-                          src="/public/Videotape-amicoBLACK.svg"
+                          src="/Videotape-amicoBLACK.svg"
                           alt="Graphic"
                           width="670"
                           height="700" />

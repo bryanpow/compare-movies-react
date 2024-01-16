@@ -23,17 +23,18 @@ export const sanitizeInput = (input) =>  {
       }[match];
     });
   }
-
+console.log(import.meta.env.VITE_API_KEY)
   //saves default movies to local storage
   export const saveDefault = async (data) => {
+
       const jMovies = data;
       localStorage.removeItem("default");
       for (const movie of jMovies) {
-        const apiKey = process.env.API_KEY;
+        const apiKey = import.meta.env.VITE_API_KEY;
         let url = `http://www.omdbapi.com/?apikey=${apiKey}&&t=${movie.title}`;
         const response = await fetch(url);
         const jsonResponse = await response.json();
-       
+        console.log(jsonResponse)
         const cardStore = {
           img: jsonResponse["Poster"],
           title: movie.title,

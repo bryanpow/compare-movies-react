@@ -81,7 +81,7 @@ function Footer({aos}) {
                                       padding: "2px",
                                       borderRadius: "100%",
                                   }}
-                                  src="/public/mail.png"
+                                  src="/mail.png"
                                   alt="Mail Icon"
                                   width="20"
                                   height="20" />
@@ -95,7 +95,7 @@ function Footer({aos}) {
                                       padding: "2px",
                                       borderRadius: "100%",
                                   }}
-                                  src="/public/telephone.png"
+                                  src="/telephone.png"
                                   alt="Telephone Icon"
                                   width="20"
                                   height="20" />
@@ -116,7 +116,7 @@ function Footer({aos}) {
                           >
                               <img
                                   style={{ backgroundColor: "white", borderRadius: "100%" }}
-                                  src="/public/social.png"
+                                  src="/social.png"
                                   alt="LinkedIn"
                                   width="50" />
                           </a>
@@ -131,7 +131,7 @@ function Footer({aos}) {
                                       padding: "5px",
                                       borderRadius: "100%",
                                   }}
-                                  src="/public/github.png"
+                                  src="/github.png"
                                   alt="GitHub"
                                   width="35" />
                           </a>

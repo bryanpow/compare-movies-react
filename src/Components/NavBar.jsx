@@ -56,7 +56,7 @@ function NavBar({settings, color}) {
                       >
                           <img
                               id="log2"
-                              src="/public/video-player.png"
+                              src="/video-player.png"
                               alt="Logo"
                               width="40"
                               height="40" />
