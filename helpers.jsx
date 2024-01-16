@@ -23,7 +23,7 @@ export const sanitizeInput = (input) =>  {
       }[match];
     });
   }
-console.log(import.meta.env.VITE_API_KEY)
+
   //saves default movies to local storage
   export const saveDefault = async (data) => {
 
