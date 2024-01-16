@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { fetchDefault, updateLocalStorageMovies } from './App'
 import { loading } from './App';
 
-function NavBar({settings, color}) {
+function NavBar({settings, color, sources}) {
     const [mobileOpen, setMobileOpen] = useState(false)
     const [mobileSettings, setMobileSettings] = useState(false)
     const [drop, setDrop] = useState('fadeAway')
@@ -97,7 +97,7 @@ function NavBar({settings, color}) {
                                       </p>
                                       </Link>
                                   </div>
-                                  <a href="/#br" id="source">
+                                  <a href='#br' id="source">
                                       <p className="gr change">Sources</p>
                                   </a>
                                   {settings !== 'nonActive' && 
@@ -166,7 +166,7 @@ function NavBar({settings, color}) {
                                       </p>
                                       </Link>
                                   </div>
-                                  <a href="/#br" id="source">
+                                  <a href='#br' id="source">
                                       <p  id='src1' className="gr change dark"  >Sources</p>
                                   </a>
                                   

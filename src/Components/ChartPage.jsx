@@ -39,7 +39,7 @@ function ChartPage() {
   }, [])
   return (
     <div>
-        <NavBar color='dark' />
+        <NavBar color='dark' sources='#br' />
         <div  id="container" style={{scrollSnapType:'y mandatory', display: 'flex'}}>
                 <div  id="top"style={{scrollSnapAlign: 'start'}} >
                     <canvas data-aos='fade-up' ref={barChartRef}   id="bar"></canvas>

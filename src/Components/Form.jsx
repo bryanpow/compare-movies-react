@@ -56,7 +56,7 @@ function Form({expand, handleExpand}) {
   return (
     <div>
       <form id="movieForm" onSubmit={handleSubmit}>
-        <h3 id="formTitle" onClick={handleExpand} style={{ fontWeight: 400, cursor: 'pointer' }}>
+        <h3 id="formTitle" onClick={handleExpand} style={{ fontWeight: 400, cursor: 'pointer'}}>
           Add Movie +
         </h3>
         <div id="formItems"  class={expand && 'expanded'}>

@@ -26,30 +26,37 @@ export const initializeChart = (barChartRef, pieChartRef, scatterChartRef, setBa
   const chart1 =  barChartRef.current.getContext('2d');;
   const chart2 = pieChartRef.current.getContext('2d');
   const defaultData = () => getDefault() || [];
-  const addedData = () => (getCard().map(movie => {
-    return {
-      title: movie.title,
-      box: convertUSDStringToInteger(movie.box),
-      critic: movie.critic,
-      genre: movie.genre,
-      img: movie.img,
-      viewer: movie.viewer
+  let addedData = null
+  if (getCard()) {
+     addedData = () => (getCard().map(movie => {
+      return {
+        title: movie.title,
+        box: convertUSDStringToInteger(movie.box),
+        critic: movie.critic,
+        genre: movie.genre,
+        img: movie.img,
+        viewer: movie.viewer
+      }
+    })) || [];
+  } else {
+    addedData = () => {
+      return []
     }
-  })) || [];
+  }
   const getBox = (target) => target.map((movie) => movie.box);
   const defaultBox = () => getBox(defaultData);
+
   let allDomestic = null;
   if (!getCard()) {
-    allDomestic = () => defaultData.map((movie) => [movie.title, movie.box]);
-  }
-    
-  else {
+    allDomestic = () => defaultData().map((movie) => [movie.title, movie.box]);
+  } else {
     allDomestic = () =>
       defaultData()
         .concat(addedData())
         .map((movie) => [movie.title, movie.box]);
   }
-    
+  
+  
 console.log(allDomestic())
   
   let domesticSorted = () => allDomestic().sort((a, b) => b[1] - a[1]);
