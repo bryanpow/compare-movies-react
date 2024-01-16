@@ -31,7 +31,7 @@ console.log(import.meta.env.VITE_API_KEY)
       localStorage.removeItem("default");
       for (const movie of jMovies) {
         const apiKey = import.meta.env.VITE_API_KEY;
-        let url = `http://www.omdbapi.com/?apikey=${apiKey}&&t=${movie.title}`;
+        let url = `https://www.omdbapi.com/?apikey=${apiKey}&&t=${movie.title}`;
         const response = await fetch(url);
         const jsonResponse = await response.json();
         console.log(jsonResponse)
