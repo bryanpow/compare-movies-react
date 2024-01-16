@@ -101,7 +101,7 @@ export const sanitizeInput = (input) =>  {
     let img = null;
     let placeHolder = true
     const apiKey = import.meta.env.VITE_API_KEY;
-    let url = `https://www.omdbapi.com/?apikey=${apiKey}&&t=${movie.title}`;
+    let url = `https://www.omdbapi.com/?apikey=${apiKey}&&t=${titleData}`;
   
     try {
       const response = await fetch(url);
