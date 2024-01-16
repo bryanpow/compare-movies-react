@@ -100,8 +100,8 @@ export const sanitizeInput = (input) =>  {
     let genre = null;
     let img = null;
     let placeHolder = true
-    const apiKey = "191759f3";
-    let url = `http://www.omdbapi.com/?apikey=${apiKey}&t=${titleData}`;
+    const apiKey = import.meta.env.VITE_API_KEY;
+    let url = `https://www.omdbapi.com/?apikey=${apiKey}&&t=${movie.title}`;
   
     try {
       const response = await fetch(url);
