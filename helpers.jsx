@@ -29,7 +29,7 @@ export const sanitizeInput = (input) =>  {
       const jMovies = data;
       localStorage.removeItem("default");
       for (const movie of jMovies) {
-        const apiKey = "191759f3";
+        const apiKey = process.env.API_KEY;
         let url = `http://www.omdbapi.com/?apikey=${apiKey}&&t=${movie.title}`;
         const response = await fetch(url);
         const jsonResponse = await response.json();
