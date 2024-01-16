@@ -60,7 +60,7 @@ function NavBar({settings, color, sources}) {
                               alt="Logo"
                               width="40"
                               height="40" />
-                          <h2 className='navChart' id="logg" style={{ fontWeight: "normal" }}>
+                          <h2 className='navChart' id="logg" >
                               MovieMetrics
                           </h2>
                       </div>
@@ -136,11 +136,11 @@ function NavBar({settings, color, sources}) {
                       >
                           <img
                               id="log2"
-                              src="/White-log.png"
+                              src="../White-log.png"
                               alt="Logo"
                               width="40"
                               height="40" />
-                          <h2 className='navChart' id="logg" style={{ fontWeight: "normal" , color: 'white'}}>
+                          <h2 className='navChart' id="logg" style={{  color: 'white'}}>
                               MovieMetrics
                           </h2>
                       </div>

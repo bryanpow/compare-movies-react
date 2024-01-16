@@ -31,8 +31,10 @@ function ChartPage() {
       });
 
       return () => {
-        window.removeEventListener("resize", function () {
-            location.reload();
+        window.removeEventListener("resize", () => {
+            setTimout(() => {
+                location.reload();
+            },2000)
           });
       }
       
