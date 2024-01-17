@@ -59,7 +59,7 @@ export const initializeChart = (barChartRef, pieChartRef, scatterChartRef, setBa
   
 console.log(allDomestic())
   
-  let domesticSorted = () => allDomestic().sort((a, b) => b[1] - a[1]);
+  let domesticSorted = () => allDomestic().sort((a, b) => a[1] - b[1]);
   const allData = () => defaultData().concat(addedData() || []);
  
   let background = () =>
