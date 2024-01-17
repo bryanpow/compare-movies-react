@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import NavBar from './NavBar'
+import { Link } from 'react-router-dom'
 import Footer from './Footer'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
@@ -23,6 +24,7 @@ function Home() {
                           and stay informed about domestic cinematic trends—all in one
                           intuitive platform.
                       </p>
+                      <Link to='/Movies'>
                       <button
                           style={{ alignSelf: "flex-start" }}
                           className="start"
@@ -30,6 +32,7 @@ function Home() {
                       >
                           Get Started
                       </button>
+                      </Link>
                   </div>
                   <div id="force">
                       <img
