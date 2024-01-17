@@ -67,7 +67,7 @@ function Footer({aos}) {
                                       padding: "2px",
                                       borderRadius: "100%",
                                   }}
-                                  src="/public/home.png"
+                                  src="/home.png"
                                   alt="Home Icon"
                                   width="20"
                                   height="20" />
